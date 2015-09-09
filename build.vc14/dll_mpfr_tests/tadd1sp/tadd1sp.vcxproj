@@ -79,7 +79,7 @@
     <ClCompile>
       <Optimization>Full</Optimization>
       <AdditionalIncludeDirectories>..\..\;..\..\..\;..\..\..\src\;..\..\..\..\mpir\dll\$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;MPFR_HAVE_GMP_IMPL;_WIN64;NDEBUG;_CONSOLE;WANT_ASSERT;__GMP_LIBGMP_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;MPFR_HAVE_GMP_IMPL;_WIN64;NDEBUG;_CONSOLE;WANT_ASSERT;__GMP_LIBGMP_DLL;MPFR_USE_THREAD_SAFE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <FloatingPointModel>Strict</FloatingPointModel>
       <PrecompiledHeader>
@@ -104,7 +104,7 @@
     <ClCompile>
       <Optimization>Full</Optimization>
       <AdditionalIncludeDirectories>..\..\;..\..\..\;..\..\..\src\;..\..\..\..\mpir\dll\$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;MPFR_HAVE_GMP_IMPL;NDEBUG;_CONSOLE;WANT_ASSERT;__GMP_LIBGMP_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;MPFR_HAVE_GMP_IMPL;NDEBUG;_CONSOLE;WANT_ASSERT;__GMP_LIBGMP_DLL;MPFR_USE_THREAD_SAFE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <FloatingPointModel>Strict</FloatingPointModel>
       <PrecompiledHeader>
@@ -126,7 +126,7 @@
     <ClCompile>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>..\..\;..\..\..\;..\..\..\src\;..\..\..\..\mpir\dll\$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;MPFR_HAVE_GMP_IMPL;_WIN64;_DEBUG;_CONSOLE;WANT_ASSERT;__GMP_LIBGMP_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;MPFR_HAVE_GMP_IMPL;_WIN64;_DEBUG;_CONSOLE;WANT_ASSERT;__GMP_LIBGMP_DLL;MPFR_USE_THREAD_SAFE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <FloatingPointModel>Strict</FloatingPointModel>
       <PrecompiledHeader>
@@ -153,7 +153,7 @@
     <ClCompile>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>..\..\;..\..\..\;..\..\..\src\;..\..\..\..\mpir\dll\$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;MPFR_HAVE_GMP_IMPL;_DEBUG;_CONSOLE;WANT_ASSERT;__GMP_LIBGMP_DLL;HAVE_CONFIG_H;HAVE_STDINT_H;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;MPFR_HAVE_GMP_IMPL;_DEBUG;_CONSOLE;WANT_ASSERT;__GMP_LIBGMP_DLL;HAVE_CONFIG_H;HAVE_STDINT_H;MPFR_USE_THREAD_SAFE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <FloatingPointModel>Strict</FloatingPointModel>
       <PrecompiledHeader>

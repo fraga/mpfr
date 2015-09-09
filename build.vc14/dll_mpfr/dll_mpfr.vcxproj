@@ -93,7 +93,7 @@
       <Optimization>Disabled</Optimization>
       <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
       <AdditionalIncludeDirectories>..\;..\..\;..\..\..\mpir\dll\$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>_DEBUG;_WIN32;_WIN64;HAVE_CONFIG_H;__GMP_LIBGMP_DLL;__MPFR_WITHIN_MPFR;_GMP_IEEE_FLOATS;_CRT_SECURE_NO_WARNINGS;HAVE_STDINT_H;MPFR_HAVE_GMP_IMPL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_WIN32;_WIN64;HAVE_CONFIG_H;__GMP_LIBGMP_DLL;__MPFR_WITHIN_MPFR;_GMP_IEEE_FLOATS;_CRT_SECURE_NO_WARNINGS;HAVE_STDINT_H;MPFR_USE_THREAD_SAFE;MPFR_HAVE_GMP_IMPL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <FloatingPointModel>Strict</FloatingPointModel>
@@ -139,7 +139,7 @@
       <Optimization>Disabled</Optimization>
       <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
       <AdditionalIncludeDirectories>..\;..\..\;..\..\..\mpir\dll\$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>_DEBUG;_WIN32;HAVE_CONFIG_H;__GMP_LIBGMP_DLL;__MPFR_WITHIN_MPFR;_GMP_IEEE_FLOATS;_CRT_SECURE_NO_WARNINGS;HAVE_STDINT_H;MPFR_HAVE_GMP_IMPL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_WIN32;HAVE_CONFIG_H;__GMP_LIBGMP_DLL;__MPFR_WITHIN_MPFR;_GMP_IEEE_FLOATS;_CRT_SECURE_NO_WARNINGS;HAVE_STDINT_H;MPFR_USE_THREAD_SAFE;MPFR_HAVE_GMP_IMPL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <FloatingPointModel>Strict</FloatingPointModel>
@@ -179,7 +179,7 @@
     <ClCompile>
       <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
       <AdditionalIncludeDirectories>..\;..\..\;..\..\..\mpir\dll\$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>NDEBUG;_WIN32;_WIN64;HAVE_CONFIG_H;__GMP_LIBGMP_DLL;__MPFR_WITHIN_MPFR;_GMP_IEEE_FLOATS;_CRT_SECURE_NO_WARNINGS;HAVE_STDINT_H;MPFR_HAVE_GMP_IMPL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;_WIN32;_WIN64;HAVE_CONFIG_H;__GMP_LIBGMP_DLL;__MPFR_WITHIN_MPFR;_GMP_IEEE_FLOATS;_CRT_SECURE_NO_WARNINGS;HAVE_STDINT_H;MPFR_USE_THREAD_SAFE;MPFR_HAVE_GMP_IMPL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ExceptionHandling>Sync</ExceptionHandling>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <BufferSecurityCheck>false</BufferSecurityCheck>
@@ -227,7 +227,7 @@
       <Optimization>Full</Optimization>
       <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
       <AdditionalIncludeDirectories>..\;..\..\;..\..\..\mpir\dll\$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>NDEBUG;_WIN32;HAVE_CONFIG_H;__GMP_LIBGMP_DLL;__MPFR_WITHIN_MPFR;_GMP_IEEE_FLOATS;_CRT_SECURE_NO_WARNINGS;HAVE_STDINT_H;MPFR_HAVE_GMP_IMPL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;_WIN32;HAVE_CONFIG_H;__GMP_LIBGMP_DLL;__MPFR_WITHIN_MPFR;_GMP_IEEE_FLOATS;_CRT_SECURE_NO_WARNINGS;HAVE_STDINT_H;MPFR_USE_THREAD_SAFE;MPFR_HAVE_GMP_IMPL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ExceptionHandling>Sync</ExceptionHandling>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <BufferSecurityCheck>false</BufferSecurityCheck>
