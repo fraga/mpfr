@@ -28,8 +28,8 @@ MPFR_THREAD_ATTR mpfr_prec_t __gmpfr_default_fp_bit_precision \
 
 #ifdef MPFR_WIN_THREAD_SAFE_DLL
 mpfr_prec_t * __gmpfr_default_fp_bit_precision_f()
-{ 
-  return &__gmpfr_default_fp_bit_precision; 
+{
+  return &__gmpfr_default_fp_bit_precision;
 }
 #endif
 
