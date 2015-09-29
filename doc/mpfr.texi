@@ -3,7 +3,7 @@
 @setfilename mpfr.info
 @documentencoding UTF-8
 @set VERSION 3.2.0-dev
-@set UPDATED-MONTH July 2015
+@set UPDATED-MONTH September 2015
 @settitle GNU MPFR @value{VERSION}
 @synindex tp fn
 @iftex
@@ -1447,6 +1447,21 @@ If @var{op} is NaN, 0 is returned and the @emph{erange} flag is set.
 If @var{op} is too big for the return type, the function returns the maximum
 or the minimum of the corresponding C type, depending on the direction
 of the overflow; the @emph{erange} flag is set too.
+When there is no such range error, if the return value differs from
+@var{op}, i.e., if @var{op} is not an integer, the inexact flag is set.
+@c For the flag specification, we simply followed the historical behavior.
+@c See <https://sympa.inria.fr/sympa/arc/mpfr/2015-07/msg00010.html>.
+@c In summary, this was a consequence of the use of mpfr_rint in case of
+@c no range error. IEEE 754-2008 specifies two kinds of operations: with
+@c inexact flag either affected or not. Here this is the former kind of
+@c operations. The easiest way to get the latter kind of operations is to
+@c save the status of the inexact flag just before the call and restore it
+@c just after (but in user code, there may be other possibilities); this
+@c can be done with mpfr_inexflag_p and mpfr_set_inexflag (knowing that
+@c the inexact flag can only be set, never cleared). A more readable way
+@c with MPFR 3.2+ is to use mpfr_flags_test or mpfr_flags_save to save
+@c the status of the inexact flag, and mpfr_flags_restore to restore it.
+@c The mpfr_get_z function follows the same specification.
 See also @code{mpfr_fits_slong_p}, @code{mpfr_fits_ulong_p},
 @code{mpfr_fits_intmax_p} and @code{mpfr_fits_uintmax_p}.
 @end deftypefun
@@ -1504,7 +1519,11 @@ is set and the minimal value of the @code{mpfr_exp_t} type is returned.
 @deftypefun int mpfr_get_z (mpz_t @var{rop}, mpfr_t @var{op}, mpfr_rnd_t @var{rnd})
 Convert @var{op} to a @code{mpz_t}, after rounding it with respect to
 @var{rnd}. If @var{op} is NaN or an infinity, the @emph{erange} flag is
-set, @var{rop} is set to 0, and 0 is returned.
+set, @var{rop} is set to 0, and 0 is returned. Otherwise the return
+value is zero when @var{rop} is equal to @var{op} (i.e., when @var{op}
+is an integer), positive when it is greater than @var{op}, and negative
+when it is smaller than @var{op}; moreover, if @var{rop} differs from
+@var{op}, i.e., if @var{op} is not an integer, the inexact flag is set.
 @end deftypefun
 
 @deftypefun int mpfr_get_f (mpf_t @var{rop}, mpfr_t @var{op}, mpfr_rnd_t @var{rnd})
@@ -2596,9 +2615,9 @@ similar way with some fixed rounding mode:
 When @var{op} is a zero or an infinity, set @var{rop} to the same value
 (with the same sign).
 
-The returned value is zero when the result is exact, positive when it is
+The return value is zero when the result is exact, positive when it is
 greater than the original value of @var{op}, and negative when it is smaller.
-More precisely, the returned value is 0 when @var{op} is an integer
+More precisely, the return value is 0 when @var{op} is an integer
 representable in @var{rop}, 1 or @minus{}1 when @var{op} is an integer
 that is not representable in @var{rop}, 2 or @minus{}2 when @var{op} is
 not an integer.
@@ -2636,7 +2655,7 @@ Set @var{rop} to @var{op} rounded to an integer:
 If the result is not representable, it is rounded in the direction @var{rnd}.
 When @var{op} is a zero or an infinity, set @var{rop} to the same value
 (with the same sign).
-The returned value is the ternary value associated with the considered
+The return value is the ternary value associated with the considered
 round-to-integer function (regarded in the same way as any other
 mathematical function).
 
@@ -2781,7 +2800,7 @@ be the case when @var{b} is near from a value exactly representable on
 Return the minimal number of bits required to store the significand of
 @var{x}, and 0 for special values, including 0.
 
-Warning!  The returned value can be less than @code{MPFR_PREC_MIN},
+Warning!  The return value can be less than @code{MPFR_PREC_MIN},
 in particular for the powers of two.  If you use this function together
 with @code{mpfr_prec_round} in order to reduce the memory space occupied
 by a number, you may need to take the maximum of the returned precision
