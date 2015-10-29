@@ -33,10 +33,14 @@ main (void)
 
   printf ("[tversion] MPFR %s\n", MPFR_VERSION_STRING);
 
-#ifdef __GNUC__
-  printf ("[tversion] GCC: %d.%d.%d\n",
-          __GNUC__, __GNUC_MINOR__, __GNUC_PATCHLEVEL__);
+  /* TODO: We may want to output info for non-GNUC-compat compilers too. See:
+   * http://sourceforge.net/p/predef/wiki/Compilers/
+   * http://nadeausoftware.com/articles/2012/10/c_c_tip_how_detect_compiler_name_and_version_using_compiler_predefined_macros
+   */
+#if defined(__GNUC__) && defined(__VERSION__)
+  printf ("[tversion] GCC: %s\n", __VERSION__);
 #endif
+
 #ifdef __MPIR_VERSION
   printf ("[tversion] MPIR: header %d.%d.%d, library %s\n",
           __MPIR_VERSION, __MPIR_VERSION_MINOR, __MPIR_VERSION_PATCHLEVEL,
