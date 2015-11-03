@@ -1,5 +1,8 @@
 dnl Process this file with autoconf to produce a configure script.
 
+dnl WARNING! C code starting with # (preprocessor directives) must not
+dnl be indented!
+
 AC_COPYRIGHT([
 Copyright 1999-2015 Free Software Foundation, Inc.
 Contributed by the AriC and Caramel projects, INRIA.
@@ -340,6 +343,13 @@ AC_ARG_ENABLE(mini-gmp,
    [  --enable-mini-gmp       build MPFR with mini-gmp (experimental) [[default=no]]],
    [ case $enableval in
       yes) AC_DEFINE([MPFR_USE_MINI_GMP],1,[Use mini-gmp])
+           # With mini-gmp, mp_limb_t is always unsigned long.
+           AC_COMPUTE_INT(nettle_cv_gmp_numb_bits, [(sizeof(unsigned long) * CHAR_BIT)],
+              [#include <limits.h>],
+              [AC_MSG_FAILURE([cannot find value of GMP_NUMB_BITS])])
+           AC_MSG_RESULT([$nettle_cv_gmp_numb_bits bits])
+           AC_DEFINE_UNQUOTED([GMP_NUMB_BITS], $nettle_cv_gmp_numb_bits, [number of bits in a limb])
+           AC_DEFINE([GMP_NAIL_BITS], 0, [number of nails in a limb])
            test_libgmp=mpz_init;;
       no)  ;;
       *) AC_MSG_ERROR([bad value for --enable-mini-gmp: yes or no]) ;;
@@ -521,17 +531,19 @@ dnl MPFR will compile; we do not guarantee that GMP will compile.
 dnl In particular fat builds are broken in GMP 4.3.2 and GMP 5.0.0
 dnl (at least on 64-bit Core 2 under Linux),
 dnl see http://gmplib.org/list-archives/gmp-bugs/2011-August/002345.html.
-AC_MSG_CHECKING(for recent GMP)
-AC_COMPILE_IFELSE([AC_LANG_SOURCE([[
+if test -z "$enable_mini_gmp" ; then
+  AC_MSG_CHECKING(for recent GMP)
+  AC_COMPILE_IFELSE([AC_LANG_SOURCE([[
 #include "gmp.h"
 #if (__GNU_MP_VERSION*100+__GNU_MP_VERSION_MINOR*10 < 420)
 # error "min GMP version is 4.2.0"
 error
 #endif
-]])],[AC_MSG_RESULT(yes)],[
- AC_MSG_RESULT(no)
- AC_MSG_ERROR([GMP 4.2.0 or newer is required])
+  ]])],[AC_MSG_RESULT(yes)],[
+   AC_MSG_RESULT(no)
+   AC_MSG_ERROR([GMP 4.2.0 or newer is required])
 ])
+fi
 
 dnl Check if gmp.h is usable at link time; this may detect errors such as
 dnl with GMP 4.1, which uses "extern __inline__" unconditionally with all
@@ -603,14 +615,15 @@ dnl incorrect and even have security implications.
 dnl WARNING! LD_RUN_PATH is not taken into account by the GNU gold ld,
 dnl e.g. from binutils-gold 2.22-5 under Debian; see
 dnl   https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=660813
-saved_LD_RUN_PATH="$LD_RUN_PATH"
-LD_RUN_PATH="${LD_RUN_PATH:+$LD_RUN_PATH$PATH_SEPARATOR}$gmp_lib_path"
-export LD_RUN_PATH
-AC_RUN_IFELSE([AC_LANG_PROGRAM([[
+if test -z "$enable_mini_gmp" ; then
+  saved_LD_RUN_PATH="$LD_RUN_PATH"
+  LD_RUN_PATH="${LD_RUN_PATH:+$LD_RUN_PATH$PATH_SEPARATOR}$gmp_lib_path"
+  export LD_RUN_PATH
+  AC_RUN_IFELSE([AC_LANG_PROGRAM([[
 #include <stdio.h>
 #include <string.h>
 #include "gmp.h"
-]], [[
+  ]], [[
   char buffer[100];
   sprintf (buffer, "%d.%d.%d", __GNU_MP_VERSION, __GNU_MP_VERSION_MINOR,
            __GNU_MP_VERSION_PATCHLEVEL);
@@ -624,7 +637,7 @@ AC_RUN_IFELSE([AC_LANG_PROGRAM([[
     return 1;
   sprintf (buffer, "%d.%d", __GNU_MP_VERSION, __GNU_MP_VERSION_MINOR);
   return (strcmp (buffer, gmp_version) != 0) ? 1 : 0;
-]])],
+  ]])],
    [AC_MSG_RESULT(yes)
     MPFR_CHECK_GMP
     MPFR_CHECK_DBL2INT_BUG
@@ -647,8 +660,9 @@ AC_RUN_IFELSE([AC_LANG_PROGRAM([[
     AC_MSG_WARN([Temporary LD_RUN_PATH was "$LD_RUN_PATH".])
     AC_MSG_WARN([==========================================================])
     ],AC_MSG_RESULT([can not test])
-)
-LD_RUN_PATH="$saved_LD_RUN_PATH"
+  )
+  LD_RUN_PATH="$saved_LD_RUN_PATH"
+fi
 
 dnl __gmpn_sbpi1_divappr_q is an internal GMP symbol; thus its behavior
 dnl may change or this symbol may be removed in the future (without being
