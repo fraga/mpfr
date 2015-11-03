@@ -23,6 +23,15 @@ http://www.gnu.org/licenses/ or write to the Free Software Foundation, Inc.,
 #define MPFR_NEED_LONGLONG_H
 #include "mpfr-impl.h"
 
+/* FIXME: In the case where one or several input pointers point to the
+   output variable, we need to store the significand in a new temporary
+   area, because these inputs may still need to be read for the possible
+   TMD resolution. Alternatively, since this is not necessarily a rare
+   case (doing s += sum(x[i],0<=i<n) should not be regarded as uncommon),
+   it may be better to optimize it by allocating a bit more for the second
+   sum_raw invocation and delaying the copy of the significand when this
+   occurs. Add a testcase to "tsum.c". */
+
 /* See the doc/sum.txt file for the algorithm and a part of its proof
 (this will later go into algorithms.tex).
 
@@ -90,6 +99,10 @@ int __gmpfr_cov_sum_tmd[MPFR_RND_MAX][2][2][3][2] = { 0 };
  *   minexpp: pointer to mpfr_exp_t (see below).
  *   maxexpp: pointer to mpfr_exp_t (see below).
  *
+ * Preconditions:
+ *   prec >= 1
+ *   wq >= logn + prec + 2
+ *
  * This function returns 0 if the accumulator is 0 (which implies that
  * the exact sum for this sum_raw invocation is 0), otherwise the number
  * of cancelled bits (>= 1), defined as the number of identical bits on
@@ -121,10 +134,18 @@ sum_raw (mp_limb_t *wp, mp_size_t ws, mpfr_prec_t wq, mpfr_ptr *const x,
     (("ws=%Pd ts=%Pd prec=%Pd", (mpfr_prec_t) ws, (mpfr_prec_t) ts, prec),
      ("", 0));
 
-  MPFR_ASSERTD (prec >= 0);
+  /* The C code below requires prec >= 0 due to the use of unsigned
+     integer arithmetic on it. Actually the computation makes sense
+     only with prec >= 1 (otherwise one can't even know the sign of
+     the result), hence the following assertion. */
+  MPFR_ASSERTD (prec >= 1);
 
   /* Consistency check. */
   MPFR_ASSERTD (wq == (mpfr_prec_t) ws * GMP_NUMB_BITS);
+
+  /* The following precondition together with prec >= 1 will imply:
+     minexp - shiftq < maxexp2, as required by the algorithm. */
+  MPFR_ASSERTD (wq >= logn + prec + 2);
 
   while (1)
     {
@@ -417,6 +438,7 @@ sum_raw (mp_limb_t *wp, mp_size_t ws, mpfr_prec_t wq, mpfr_ptr *const x,
                   MPN_COPY_DECR (wp + shifts, wp, ws - shifts);
                 MPN_ZERO (wp, shifts);
                 minexp -= shiftq;
+                MPFR_ASSERTD (minexp < maxexp2);
               }
           }
         else if (maxexp2 == MPFR_EXP_MIN)
@@ -482,7 +504,10 @@ sum_aux (mpfr_ptr sum, mpfr_ptr *const x, unsigned long n, mpfr_rnd_t rnd,
   sq = MPFR_GET_PREC (sum);
   cq = logn + 1;
 
-  /* First determine the size of the accumulator. */
+  /* First determine the size of the accumulator.
+   * cq + sq + logn + 2 >= logn + sq + 5, which will be used later.
+   * The assertion wq - cq - sq >= 4 is another way to check that.
+   */
   ws = MPFR_PREC2LIMBS (cq + sq + logn + 2);
   wq = (mpfr_prec_t) ws * GMP_NUMB_BITS;
   MPFR_ASSERTD (wq - cq - sq >= 4);
@@ -517,6 +542,7 @@ sum_aux (mpfr_ptr sum, mpfr_ptr *const x, unsigned long n, mpfr_rnd_t rnd,
     MPFR_LOG_MSG (("Compute an approximation with sum_raw...\n", 0));
 
     UPDATE_MINEXP (maxexp, wq - cq);
+    MPFR_ASSERTD (wq >= logn + sq + 5);
     cancel = sum_raw (wp, ws, wq, x, n, minexp, maxexp, tp, ts,
                       logn, sq + 3, &e, &minexp, &maxexp);
 
@@ -556,7 +582,7 @@ sum_aux (mpfr_ptr sum, mpfr_ptr *const x, unsigned long n, mpfr_rnd_t rnd,
        take the absolute value and do an initial rounding,
        zeroing the trailing bits at this point.
        TODO: This may be improved by merging some operations
-       is particular case. The average speed-up may not be
+       in particular cases. The average speed-up may not be
        significant, though. To be tested... */
 
     sn = MPFR_PREC2LIMBS (sq);
@@ -862,7 +888,7 @@ sum_aux (mpfr_ptr sum, mpfr_ptr *const x, unsigned long n, mpfr_rnd_t rnd,
                 zs = ws - wi;
                 MPFR_ASSERTD (zs >= 0 && zs < ws);
                 if (zs > 0)
-                  MPN_COPY_INCR (wp + zs, wp, wi);
+                  MPN_COPY_DECR (wp + zs, wp, wi);
               }
 
             UPDATE_MINEXP (minexp, zs * GMP_NUMB_BITS + td);
@@ -885,8 +911,13 @@ sum_aux (mpfr_ptr sum, mpfr_ptr *const x, unsigned long n, mpfr_rnd_t rnd,
 
         MPN_ZERO (wp, zs);
 
+        /* We need to determine the sign sst of the secondary term.
+           In sum_raw, since the truncated sum corresponding to this
+           secondary term will be in [2^(e-1),2^e] and the error
+           strictly less than 2^err, we can stop the iterations when
+           e - err >= 1 (this bound is the 11th argument of sum_raw). */
         cancel = sum_raw (wp, ws, wq, x, n, minexp, maxexp, tp, ts,
-                          logn, 0, NULL, &minexp, &maxexp);
+                          logn, 1, NULL, &minexp, &maxexp);
 
         if (cancel != 0)
           sst = MPFR_LIMB_MSB (wp[ws-1]) == 0 ? 1 : -1;

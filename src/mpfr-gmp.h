@@ -56,8 +56,8 @@ extern "C" {
  ******************** Check GMP ***********************
  ******************************************************/
 
-#if !__MPFR_GMP(4,2,0)
-# error "GMP 4.2.0 or newer needed"
+#if !__MPFR_GMP(5,0,0) && !defined(MPFR_USE_MINI_GMP)
+# error "GMP 5.0.0 or newer is required"
 #endif
 
 #if GMP_NAIL_BITS != 0
@@ -126,6 +126,8 @@ void *alloca (size_t);
 
 /* MP_LIMB macros */
 #define MPN_ZERO(dst, n) memset((dst), 0, (n)*MPFR_BYTES_PER_MP_LIMB)
+/* TODO: add MPFR_ASSERTD assertions for MPN_COPY_DECR and MPN_COPY_INCR,
+   even though memmove works with any overlapping. Useful to detect bugs! */
 #define MPN_COPY_DECR(dst,src,n) memmove((dst),(src),(n)*MPFR_BYTES_PER_MP_LIMB)
 #define MPN_COPY_INCR(dst,src,n) memmove((dst),(src),(n)*MPFR_BYTES_PER_MP_LIMB)
 #define MPN_COPY(dst,src,n) \
