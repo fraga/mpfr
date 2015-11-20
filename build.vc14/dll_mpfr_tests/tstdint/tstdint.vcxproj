@@ -80,12 +80,12 @@
     <ClCompile>
       <Optimization>Full</Optimization>
       <AdditionalIncludeDirectories>..\..\;..\..\..\;..\..\..\src\;..\..\..\..\mpir\dll\$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;MPFR_HAVE_GMP_IMPL;_WIN64;NDEBUG;_CONSOLE;WANT_ASSERT;__GMP_LIBGMP_DLL;MPFR_USE_THREAD_SAFE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;MPFR_HAVE_GMP_IMPL;NDEBUG;_CONSOLE;WANT_ASSERT;__GMP_LIBGMP_DLL;MPFR_USE_THREAD_SAFE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <FloatingPointModel>Strict</FloatingPointModel>
       <PrecompiledHeader>
       </PrecompiledHeader>
-      <ForcedIncludeFiles>..\..\mpir\lib\$(IntDir)config.h</ForcedIncludeFiles>
+      <ForcedIncludeFiles>..\mpir\dll\$(IntDir)config.h</ForcedIncludeFiles>
     </ClCompile>
     <Link>
       <AdditionalDependencies>..\$(IntDir)lib_tests.lib;..\..\..\dll\$(IntDir)mpfr.lib;..\..\..\..\mpir\dll\$(IntDir)mpir.lib;%(AdditionalDependencies)</AdditionalDependencies>
@@ -105,12 +105,12 @@
     <ClCompile>
       <Optimization>Full</Optimization>
       <AdditionalIncludeDirectories>..\..\;..\..\..\;..\..\..\src\;..\..\..\..\mpir\dll\$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;MPFR_HAVE_GMP_IMPL;NDEBUG;_CONSOLE;WANT_ASSERT;__GMP_LIBGMP_DLL;MPFR_USE_THREAD_SAFE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WIN64;MPFR_HAVE_GMP_IMPL;NDEBUG;_CONSOLE;WANT_ASSERT;__GMP_LIBGMP_DLL;MPFR_USE_THREAD_SAFE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <FloatingPointModel>Strict</FloatingPointModel>
       <PrecompiledHeader>
       </PrecompiledHeader>
-      <ForcedIncludeFiles>..\..\mpir\lib\$(IntDir)config.h</ForcedIncludeFiles>
+      <ForcedIncludeFiles>..\mpir\dll\$(IntDir)config.h</ForcedIncludeFiles>
     </ClCompile>
     <Link>
       <AdditionalDependencies>..\$(IntDir)lib_tests.lib;..\..\..\dll\$(IntDir)mpfr.lib;..\..\..\..\mpir\dll\$(IntDir)mpir.lib;%(AdditionalDependencies)</AdditionalDependencies>
@@ -127,12 +127,12 @@
     <ClCompile>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>..\..\;..\..\..\;..\..\..\src\;..\..\..\..\mpir\dll\$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;MPFR_HAVE_GMP_IMPL;_WIN64;_DEBUG;_CONSOLE;WANT_ASSERT;__GMP_LIBGMP_DLL;MPFR_USE_THREAD_SAFE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;MPFR_HAVE_GMP_IMPL;_DEBUG;_CONSOLE;WANT_ASSERT;__GMP_LIBGMP_DLL;MPFR_USE_THREAD_SAFE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <FloatingPointModel>Strict</FloatingPointModel>
       <PrecompiledHeader>
       </PrecompiledHeader>
-      <ForcedIncludeFiles>..\..\mpir\lib\$(IntDir)config.h</ForcedIncludeFiles>
+      <ForcedIncludeFiles>..\mpir\dll\$(IntDir)config.h</ForcedIncludeFiles>
     </ClCompile>
     <Link>
       <AdditionalDependencies>..\$(IntDir)lib_tests.lib;..\..\..\dll\$(IntDir)mpfr.lib;..\..\..\..\mpir\dll\$(IntDir)mpir.lib;%(AdditionalDependencies)</AdditionalDependencies>
@@ -154,12 +154,12 @@
     <ClCompile>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>..\..\;..\..\..\;..\..\..\src\;..\..\..\..\mpir\dll\$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;MPFR_HAVE_GMP_IMPL;_DEBUG;_CONSOLE;WANT_ASSERT;__GMP_LIBGMP_DLL;HAVE_CONFIG_H;HAVE_STDINT_H;MPFR_USE_THREAD_SAFE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WIN64;MPFR_HAVE_GMP_IMPL;_DEBUG;_CONSOLE;WANT_ASSERT;__GMP_LIBGMP_DLL;HAVE_CONFIG_H;HAVE_STDINT_H;MPFR_USE_THREAD_SAFE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <FloatingPointModel>Strict</FloatingPointModel>
       <PrecompiledHeader>
       </PrecompiledHeader>
-      <ForcedIncludeFiles>..\..\mpir\lib\$(IntDir)config.h</ForcedIncludeFiles>
+      <ForcedIncludeFiles>..\mpir\dll\$(IntDir)config.h</ForcedIncludeFiles>
     </ClCompile>
     <Link>
       <AdditionalDependencies>..\$(IntDir)lib_tests.lib;..\..\..\dll\$(IntDir)mpfr.lib;..\..\..\..\mpir\dll\$(IntDir)mpir.lib;%(AdditionalDependencies)</AdditionalDependencies>

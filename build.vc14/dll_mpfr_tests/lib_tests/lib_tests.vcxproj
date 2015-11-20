@@ -79,7 +79,7 @@
     <ClCompile>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>..\..\;..\..\..\;..\..\..\src\;..\..\..\..\mpir\dll\$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_WIN64;_DEBUG;_LIB;WANT_ASSERT;__GMP_LIBGMP_DLL;MPFR_USE_THREAD_SAFE;MPFR_HAVE_GMP_IMPL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;WANT_ASSERT;__GMP_LIBGMP_DLL;MPFR_USE_THREAD_SAFE;MPFR_HAVE_GMP_IMPL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
@@ -87,7 +87,7 @@
       <PrecompiledHeader>
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <ForcedIncludeFiles>..\mpir\lib\$(IntDir)config.h</ForcedIncludeFiles>
+      <ForcedIncludeFiles>..\mpir\dll\$(IntDir)config.h</ForcedIncludeFiles>
     </ClCompile>
     <Lib />
   </ItemDefinitionGroup>
@@ -98,7 +98,7 @@
     <ClCompile>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>..\..\;..\..\..\;..\..\..\src\;..\..\..\..\mpir\dll\$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;WANT_ASSERT;__GMP_LIBGMP_DLL;MPFR_USE_THREAD_SAFE;MPFR_HAVE_GMP_IMPL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WIN64;_DEBUG;_LIB;WANT_ASSERT;__GMP_LIBGMP_DLL;MPFR_USE_THREAD_SAFE;MPFR_HAVE_GMP_IMPL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
@@ -106,29 +106,11 @@
       <PrecompiledHeader>
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <ForcedIncludeFiles>..\mpir\lib\$(IntDir)config.h</ForcedIncludeFiles>
+      <ForcedIncludeFiles>..\mpir\dll\$(IntDir)config.h</ForcedIncludeFiles>
     </ClCompile>
     <Lib />
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <ClCompile>
-      <Optimization>Full</Optimization>
-      <AdditionalIncludeDirectories>..\..\;..\..\..\;..\..\..\src\;..\..\..\..\mpir\dll\$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_WIN64;NDEBUG;_LIB;WANT_ASSERT;__GMP_LIBGMP_DLL;MPFR_USE_THREAD_SAFE;MPFR_HAVE_GMP_IMPL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
-      <FloatingPointModel>Strict</FloatingPointModel>
-      <PrecompiledHeader>
-      </PrecompiledHeader>
-      <WarningLevel>Level3</WarningLevel>
-      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <ForcedIncludeFiles>..\mpir\lib\$(IntDir)config.h</ForcedIncludeFiles>
-    </ClCompile>
-    <Lib />
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <Midl>
-      <TargetEnvironment>X64</TargetEnvironment>
-    </Midl>
     <ClCompile>
       <Optimization>Full</Optimization>
       <AdditionalIncludeDirectories>..\..\;..\..\..\;..\..\..\src\;..\..\..\..\mpir\dll\$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -139,7 +121,25 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <ForcedIncludeFiles>..\mpir\lib\$(IntDir)config.h</ForcedIncludeFiles>
+      <ForcedIncludeFiles>..\mpir\dll\$(IntDir)config.h</ForcedIncludeFiles>
+    </ClCompile>
+    <Lib />
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <TargetEnvironment>X64</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <Optimization>Full</Optimization>
+      <AdditionalIncludeDirectories>..\..\;..\..\..\;..\..\..\src\;..\..\..\..\mpir\dll\$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WIN64;NDEBUG;_LIB;WANT_ASSERT;__GMP_LIBGMP_DLL;MPFR_USE_THREAD_SAFE;MPFR_HAVE_GMP_IMPL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FloatingPointModel>Strict</FloatingPointModel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ForcedIncludeFiles>..\mpir\dll\$(IntDir)config.h</ForcedIncludeFiles>
     </ClCompile>
     <Lib />
   </ItemDefinitionGroup>
