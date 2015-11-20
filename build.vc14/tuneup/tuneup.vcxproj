@@ -93,7 +93,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;MPFR_HAVE_GMP_IMPL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\;..\..\;..\..\src\;..\..\..\mpir\lib\$(IntDir);..\..\..\mpir\tune\;..\..\..\mpir\;..\..\..\mpir\build.vc14\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\;..\..\;..\..\src\;..\..\..\mpir\lib\$(IntDir);..\..\..\mpir\tune\;..\..\..\mpir\;..\..\..\mpir\build.vc\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <ForcedIncludeFiles>..\mpir\lib\$(IntDir)config.h</ForcedIncludeFiles>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -112,7 +112,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_WIN64;_DEBUG;_CONSOLE;MPFR_HAVE_GMP_IMPL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\;..\..\;..\..\src\;..\..\..\mpir\lib\$(IntDir);..\..\..\mpir\tune\;..\..\..\mpir\;..\..\..\mpir\build.vc14\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\;..\..\;..\..\src\;..\..\..\mpir\lib\$(IntDir);..\..\..\mpir\tune\;..\..\..\mpir\;..\..\..\mpir\build.vc\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <ForcedIncludeFiles>..\mpir\lib\$(IntDir)config.h</ForcedIncludeFiles>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -133,7 +133,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;MPFR_HAVE_GMP_IMPL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\;..\..\;..\..\src\;..\..\..\mpir\lib\$(IntDir);..\..\..\mpir\tune\;..\..\..\mpir\;..\..\..\mpir\build.vc14\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\;..\..\;..\..\src\;..\..\..\mpir\lib\$(IntDir);..\..\..\mpir\tune\;..\..\..\mpir\;..\..\..\mpir\build.vc\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <ForcedIncludeFiles>..\mpir\lib\$(IntDir)config.h</ForcedIncludeFiles>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
@@ -155,7 +155,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;_WIN64;NDEBUG;_CONSOLE;MPFR_HAVE_GMP_IMPL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\;..\..\;..\..\src\;..\..\..\mpir\lib\$(IntDir);..\..\..\mpir\tune\;..\..\..\mpir\;..\..\..\mpir\build.vc14\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\;..\..\;..\..\src\;..\..\..\mpir\lib\$(IntDir);..\..\..\mpir\tune\;..\..\..\mpir\;..\..\..\mpir\build.vc\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <ForcedIncludeFiles>..\mpir\lib\$(IntDir)config.h</ForcedIncludeFiles>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
