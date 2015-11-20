@@ -1,5 +1,5 @@
 
-#if defined _WINDLL
+#if defined _WINDLL || (_CONSOLE && __GMP_LIBGMP_DLL)
 #  if defined( _WIN64 )
 #    if defined( _DEBUG )
 #      include "..\..\mpir\dll\x64\debug\config.h"
