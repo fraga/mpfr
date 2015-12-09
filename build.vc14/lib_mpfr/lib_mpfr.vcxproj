@@ -77,7 +77,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <PreBuildEvent>
-      <Command>..\out_copy_rename.bat ..\..\src\mpfr.h ..\..\lib\$(IntDir) mpfr.h
+      <Command>..\out_copy_rename.bat ..\..\src\mpfr.h ..\..\lib mpfr.h
 ..\out_copy_rename.bat ..\..\src\mparam_h.in ..\..\ mparam.h
 </Command>
     </PreBuildEvent>
@@ -88,7 +88,7 @@
     <ClCompile>
       <Optimization>Disabled</Optimization>
       <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
-      <AdditionalIncludeDirectories>..\;..\..\;..\..\src\;..\..\..\mpir\lib\$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\;..\..\;..\..\src\;..\..\..\mpir\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_WIN32;_DEBUG;_LIB;_GMP_IEEE_FLOATS;_CRT_SECURE_NO_WARNINGS;MPFR_HAVE_GMP_IMPL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -111,7 +111,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <PreBuildEvent>
-      <Command>..\out_copy_rename.bat ..\..\src\mpfr.h ..\..\lib\$(IntDir) mpfr.h
+      <Command>..\out_copy_rename.bat ..\..\src\mpfr.h ..\..\lib mpfr.h
 ..\out_copy_rename.bat ..\..\src\mparam_h.in ..\..\ mparam.h
 </Command>
     </PreBuildEvent>
@@ -125,7 +125,7 @@
     <ClCompile>
       <Optimization>Disabled</Optimization>
       <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
-      <AdditionalIncludeDirectories>..\;..\..\;..\..\src\;..\..\..\mpir\lib\$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\;..\..\;..\..\src\;..\..\..\mpir\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_WIN32;_WIN64;_DEBUG;_LIB;_GMP_IEEE_FLOATS;_CRT_SECURE_NO_WARNINGS;MPFR_HAVE_GMP_IMPL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -149,7 +149,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <PreBuildEvent>
-      <Command>..\out_copy_rename.bat ..\..\src\mpfr.h ..\..\lib\$(IntDir) mpfr.h
+      <Command>..\out_copy_rename.bat ..\..\src\mpfr.h ..\..\lib mpfr.h
 ..\out_copy_rename.bat ..\..\src\mparam_h.in ..\..\ mparam.h
 </Command>
     </PreBuildEvent>
@@ -160,7 +160,7 @@
     <ClCompile>
       <Optimization>Full</Optimization>
       <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
-      <AdditionalIncludeDirectories>..\;..\..\;..\..\src\;..\..\..\mpir\lib\$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\;..\..\;..\..\src\;..\..\..\mpir\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_WIN32;_LIB;_WIN64;NDEBUG;_GMP_IEEE_FLOATS;_CRT_SECURE_NO_WARNINGS;MPFR_HAVE_GMP_IMPL</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <BufferSecurityCheck>false</BufferSecurityCheck>
@@ -183,7 +183,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <PreBuildEvent>
-      <Command>..\out_copy_rename.bat ..\..\src\mpfr.h ..\..\lib\$(IntDir) mpfr.h
+      <Command>..\out_copy_rename.bat ..\..\src\mpfr.h ..\..\lib mpfr.h
 ..\out_copy_rename.bat ..\..\src\mparam_h.in ..\..\ mparam.h
 </Command>
     </PreBuildEvent>
@@ -197,7 +197,7 @@
     <ClCompile>
       <Optimization>Full</Optimization>
       <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
-      <AdditionalIncludeDirectories>..\;..\..\;..\..\src\;..\..\..\mpir\lib\$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\;..\..\;..\..\src\;..\..\..\mpir\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_WIN32;_WIN64;NDEBUG;_LIB;_GMP_IEEE_FLOATS;_CRT_SECURE_NO_WARNINGS;MPFR_HAVE_GMP_IMPL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <BufferSecurityCheck>false</BufferSecurityCheck>
@@ -448,19 +448,35 @@
     <ClCompile Include="..\get_patches.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\mpir\lib\x64\release\gmp.h" />
+    <ClInclude Include="..\..\..\mpir\lib\config.h" />
+    <ClInclude Include="..\..\..\mpir\lib\gmp-impl.h" />
+    <ClInclude Include="..\..\..\mpir\lib\gmp-mparam.h" />
+    <ClInclude Include="..\..\..\mpir\lib\gmp.h" />
+    <ClInclude Include="..\..\..\mpir\lib\longlong.h" />
+    <ClInclude Include="..\..\src\amd\amdfam10\mparam.h" />
+    <ClInclude Include="..\..\src\amd\athlon\mparam.h" />
+    <ClInclude Include="..\..\src\amd\k8\mparam.h" />
     <ClInclude Include="..\..\src\fits_s.h" />
     <ClInclude Include="..\..\src\fits_u.h" />
+    <ClInclude Include="..\..\src\generic\mparam.h" />
     <ClInclude Include="..\..\src\gen_inverse.h" />
     <ClInclude Include="..\..\src\ieee_floats.h" />
     <ClInclude Include="..\..\src\mpf2mpfr.h" />
+    <ClInclude Include="..\..\src\mpfr-cvers.h" />
     <ClInclude Include="..\..\src\mpfr-gmp.h" />
     <ClInclude Include="..\..\src\mpfr-impl.h" />
+    <ClInclude Include="..\..\src\mpfr-intmax.h" />
     <ClInclude Include="..\..\src\mpfr-longlong.h" />
+    <ClInclude Include="..\..\src\mpfr-mini-gmp.h" />
     <ClInclude Include="..\..\src\mpfr-sassert.h" />
     <ClInclude Include="..\..\src\mpfr-thread.h" />
     <ClInclude Include="..\..\src\mpfr.h" />
     <ClInclude Include="..\..\src\random_deviate.h" />
+    <ClInclude Include="..\..\src\x86\core2\mparam.h" />
+    <ClInclude Include="..\..\src\x86\mparam.h" />
+    <ClInclude Include="..\..\src\x86_64\core2\mparam.h" />
+    <ClInclude Include="..\..\src\x86_64\corei5\mparam.h" />
+    <ClInclude Include="..\..\src\x86_64\pentium4\mparam.h" />
     <ClInclude Include="..\mparam.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
