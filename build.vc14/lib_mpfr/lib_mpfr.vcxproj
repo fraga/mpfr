@@ -88,8 +88,8 @@
     <ClCompile>
       <Optimization>Disabled</Optimization>
       <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
-      <AdditionalIncludeDirectories>..\;..\..\;..\..\src\;..\..\..\mpir\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_WIN32;_DEBUG;_LIB;_GMP_IEEE_FLOATS;_CRT_SECURE_NO_WARNINGS;MPFR_HAVE_GMP_IMPL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\;..\..\src\;..\..\..\mpir\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WIN32;HAVE_CONFIG_H;_DEBUG;_LIB;_GMP_IEEE_FLOATS;_CRT_SECURE_NO_WARNINGS;MPFR_HAVE_GMP_IMPL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <FloatingPointModel>Strict</FloatingPointModel>
@@ -97,7 +97,6 @@
       </PrecompiledHeader>
       <ProgramDataBaseFileName>$(TargetDir)$(TargetName).pdb</ProgramDataBaseFileName>
       <WarningLevel>Level3</WarningLevel>
-      <ForcedIncludeFiles>config.h</ForcedIncludeFiles>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
@@ -125,8 +124,8 @@
     <ClCompile>
       <Optimization>Disabled</Optimization>
       <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
-      <AdditionalIncludeDirectories>..\;..\..\;..\..\src\;..\..\..\mpir\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_WIN32;_WIN64;_DEBUG;_LIB;_GMP_IEEE_FLOATS;_CRT_SECURE_NO_WARNINGS;MPFR_HAVE_GMP_IMPL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\;..\..\src\;..\..\..\mpir\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WIN32;HAVE_CONFIG_H;_WIN64;_DEBUG;_LIB;_GMP_IEEE_FLOATS;_CRT_SECURE_NO_WARNINGS;MPFR_HAVE_GMP_IMPL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <FloatingPointModel>Strict</FloatingPointModel>
@@ -134,12 +133,12 @@
       </PrecompiledHeader>
       <ProgramDataBaseFileName>$(TargetDir)$(TargetName).pdb</ProgramDataBaseFileName>
       <WarningLevel>Level3</WarningLevel>
-      <ForcedIncludeFiles>config.h</ForcedIncludeFiles>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Lib>
       <AdditionalDependencies>..\..\..\mpir\lib\$(IntDir)mpir.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <TargetMachine />
     </Lib>
     <PostBuildEvent>
       <Command>
@@ -160,8 +159,8 @@
     <ClCompile>
       <Optimization>Full</Optimization>
       <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
-      <AdditionalIncludeDirectories>..\;..\..\;..\..\src\;..\..\..\mpir\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_WIN32;_LIB;_WIN64;NDEBUG;_GMP_IEEE_FLOATS;_CRT_SECURE_NO_WARNINGS;MPFR_HAVE_GMP_IMPL</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\;..\..\src\;..\..\..\mpir\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WIN32;HAVE_CONFIG_H;_LIB;_WIN64;NDEBUG;_GMP_IEEE_FLOATS;_CRT_SECURE_NO_WARNINGS;MPFR_HAVE_GMP_IMPL</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <BufferSecurityCheck>false</BufferSecurityCheck>
       <FloatingPointModel>Strict</FloatingPointModel>
@@ -169,7 +168,6 @@
       </PrecompiledHeader>
       <ProgramDataBaseFileName>$(TargetDir)$(TargetName).pdb</ProgramDataBaseFileName>
       <WarningLevel>Level3</WarningLevel>
-      <ForcedIncludeFiles>config.h</ForcedIncludeFiles>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
@@ -197,19 +195,19 @@
     <ClCompile>
       <Optimization>Full</Optimization>
       <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
-      <AdditionalIncludeDirectories>..\;..\..\;..\..\src\;..\..\..\mpir\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_WIN32;_WIN64;NDEBUG;_LIB;_GMP_IEEE_FLOATS;_CRT_SECURE_NO_WARNINGS;MPFR_HAVE_GMP_IMPL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\;..\..\src\;..\..\..\mpir\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WIN32;HAVE_CONFIG_H;_WIN64;NDEBUG;_LIB;_GMP_IEEE_FLOATS;_CRT_SECURE_NO_WARNINGS;MPFR_HAVE_GMP_IMPL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <BufferSecurityCheck>false</BufferSecurityCheck>
       <FloatingPointModel>Strict</FloatingPointModel>
       <ProgramDataBaseFileName>$(TargetDir)$(TargetName).pdb</ProgramDataBaseFileName>
       <WarningLevel>Level3</WarningLevel>
-      <ForcedIncludeFiles>config.h</ForcedIncludeFiles>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Lib>
       <AdditionalDependencies>..\..\..\mpir\lib\$(IntDir)mpir.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <TargetMachine />
     </Lib>
     <PostBuildEvent>
       <Command>
@@ -331,6 +329,12 @@
     <ClCompile Include="..\..\src\isregular.c" />
     <ClCompile Include="..\..\src\iszero.c" />
     <ClCompile Include="..\..\src\jn.c" />
+    <ClCompile Include="..\..\src\jyn_asympt.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="..\..\src\li2.c" />
     <ClCompile Include="..\..\src\lngamma.c" />
     <ClCompile Include="..\..\src\log.c" />
@@ -453,12 +457,8 @@
     <ClInclude Include="..\..\..\mpir\lib\gmp-mparam.h" />
     <ClInclude Include="..\..\..\mpir\lib\gmp.h" />
     <ClInclude Include="..\..\..\mpir\lib\longlong.h" />
-    <ClInclude Include="..\..\src\amd\amdfam10\mparam.h" />
-    <ClInclude Include="..\..\src\amd\athlon\mparam.h" />
-    <ClInclude Include="..\..\src\amd\k8\mparam.h" />
     <ClInclude Include="..\..\src\fits_s.h" />
     <ClInclude Include="..\..\src\fits_u.h" />
-    <ClInclude Include="..\..\src\generic\mparam.h" />
     <ClInclude Include="..\..\src\gen_inverse.h" />
     <ClInclude Include="..\..\src\ieee_floats.h" />
     <ClInclude Include="..\..\src\mpf2mpfr.h" />
@@ -472,11 +472,6 @@
     <ClInclude Include="..\..\src\mpfr-thread.h" />
     <ClInclude Include="..\..\src\mpfr.h" />
     <ClInclude Include="..\..\src\random_deviate.h" />
-    <ClInclude Include="..\..\src\x86\core2\mparam.h" />
-    <ClInclude Include="..\..\src\x86\mparam.h" />
-    <ClInclude Include="..\..\src\x86_64\core2\mparam.h" />
-    <ClInclude Include="..\..\src\x86_64\corei5\mparam.h" />
-    <ClInclude Include="..\..\src\x86_64\pentium4\mparam.h" />
     <ClInclude Include="..\mparam.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
