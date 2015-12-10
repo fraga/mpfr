@@ -26,6 +26,10 @@ http://www.gnu.org/licenses/ or write to the Free Software Foundation, Inc.,
 # endif
 #endif
 
+#ifdef _MSC_VER
+#include <signal.h>
+#endif
+
 #include <float.h>
 #include <errno.h>
 
