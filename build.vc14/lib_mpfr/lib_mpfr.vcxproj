@@ -78,8 +78,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <PreBuildEvent>
       <Command>..\out_copy_rename.bat ..\..\src\mpfr.h ..\..\lib mpfr.h
-..\out_copy_rename.bat ..\..\src\mparam_h.in ..\..\ mparam.h
-</Command>
+..\out_copy_rename.bat ..\..\src\mparam_h.in ..\..\ mparam.h</Command>
     </PreBuildEvent>
     <CustomBuildStep>
       <Command>
@@ -111,8 +110,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <PreBuildEvent>
       <Command>..\out_copy_rename.bat ..\..\src\mpfr.h ..\..\lib mpfr.h
-..\out_copy_rename.bat ..\..\src\mparam_h.in ..\..\ mparam.h
-</Command>
+..\out_copy_rename.bat ..\..\src\mparam_h.in ..\..\ mparam.h</Command>
     </PreBuildEvent>
     <CustomBuildStep>
       <Command>
@@ -125,7 +123,7 @@
       <Optimization>Disabled</Optimization>
       <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
       <AdditionalIncludeDirectories>..\;..\..\src\;..\..\..\mpir\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_WIN32;HAVE_CONFIG_H;_WIN64;_DEBUG;_LIB;_GMP_IEEE_FLOATS;_CRT_SECURE_NO_WARNINGS;MPFR_HAVE_GMP_IMPL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WIN32;HAVE_CONFIG_H;_DEBUG;_LIB;_GMP_IEEE_FLOATS;_CRT_SECURE_NO_WARNINGS;MPFR_HAVE_GMP_IMPL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <FloatingPointModel>Strict</FloatingPointModel>
@@ -149,8 +147,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <PreBuildEvent>
       <Command>..\out_copy_rename.bat ..\..\src\mpfr.h ..\..\lib mpfr.h
-..\out_copy_rename.bat ..\..\src\mparam_h.in ..\..\ mparam.h
-</Command>
+..\out_copy_rename.bat ..\..\src\mparam_h.in ..\..\ mparam.h</Command>
     </PreBuildEvent>
     <CustomBuildStep>
       <Command>
@@ -182,8 +179,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <PreBuildEvent>
       <Command>..\out_copy_rename.bat ..\..\src\mpfr.h ..\..\lib mpfr.h
-..\out_copy_rename.bat ..\..\src\mparam_h.in ..\..\ mparam.h
-</Command>
+..\out_copy_rename.bat ..\..\src\mparam_h.in ..\..\ mparam.h</Command>
     </PreBuildEvent>
     <CustomBuildStep>
       <Command>
@@ -196,7 +192,7 @@
       <Optimization>Full</Optimization>
       <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
       <AdditionalIncludeDirectories>..\;..\..\src\;..\..\..\mpir\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_WIN32;HAVE_CONFIG_H;_WIN64;NDEBUG;_LIB;_GMP_IEEE_FLOATS;_CRT_SECURE_NO_WARNINGS;MPFR_HAVE_GMP_IMPL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WIN32;HAVE_CONFIG_H;NDEBUG;_LIB;_GMP_IEEE_FLOATS;_CRT_SECURE_NO_WARNINGS;MPFR_HAVE_GMP_IMPL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <BufferSecurityCheck>false</BufferSecurityCheck>
       <FloatingPointModel>Strict</FloatingPointModel>
