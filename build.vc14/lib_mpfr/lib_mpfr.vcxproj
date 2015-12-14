@@ -446,11 +446,11 @@
     <ClCompile Include="..\get_patches.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\mpir\lib\config.h" />
-    <ClInclude Include="..\..\..\mpir\lib\gmp-impl.h" />
-    <ClInclude Include="..\..\..\mpir\lib\gmp-mparam.h" />
-    <ClInclude Include="..\..\..\mpir\lib\gmp.h" />
-    <ClInclude Include="..\..\..\mpir\lib\longlong.h" />
+    <ClInclude Include="..\..\..\mpir\lib\x64\Release\config.h" />
+    <ClInclude Include="..\..\..\mpir\lib\x64\Release\gmp-impl.h" />
+    <ClInclude Include="..\..\..\mpir\lib\x64\Release\gmp-mparam.h" />
+    <ClInclude Include="..\..\..\mpir\lib\x64\Release\gmp.h" />
+    <ClInclude Include="..\..\..\mpir\lib\x64\Release\longlong.h" />
     <ClInclude Include="..\..\src\fits_s.h" />
     <ClInclude Include="..\..\src\fits_u.h" />
     <ClInclude Include="..\..\src\gen_inverse.h" />

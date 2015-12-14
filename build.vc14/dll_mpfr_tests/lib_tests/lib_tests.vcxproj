@@ -167,9 +167,25 @@
     <ClCompile Include="..\..\..\tests\tests.c">
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Default</CompileAs>
     </ClCompile>
+    <ClCompile Include="..\..\getrusage.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\mpir\dll\config.h" />
+    <ClInclude Include="..\..\..\..\mpir\dll\x64\Release\config.h" />
+    <ClInclude Include="..\..\..\..\mpir\dll\x64\Release\gmp-impl.h" />
+    <ClInclude Include="..\..\..\..\mpir\dll\x64\Release\gmp-mparam.h" />
+    <ClInclude Include="..\..\..\..\mpir\dll\x64\Release\gmp.h" />
+    <ClInclude Include="..\..\..\..\mpir\dll\x64\Release\longlong.h" />
+    <ClInclude Include="..\..\..\src\mpfr-cvers.h" />
+    <ClInclude Include="..\..\..\src\mpfr-gmp.h" />
+    <ClInclude Include="..\..\..\src\mpfr-impl.h" />
+    <ClInclude Include="..\..\..\src\mpfr-intmax.h" />
+    <ClInclude Include="..\..\..\src\mpfr-longlong.h" />
+    <ClInclude Include="..\..\..\src\mpfr-mini-gmp.h" />
+    <ClInclude Include="..\..\..\src\mpfr-sassert.h" />
+    <ClInclude Include="..\..\..\src\mpfr-thread.h" />
+    <ClInclude Include="..\..\..\src\mpfr.h" />
+    <ClInclude Include="..\..\..\tests\mpfr-test.h" />
+    <ClInclude Include="..\..\getrusage.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

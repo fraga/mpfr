@@ -695,6 +695,9 @@
     <ClCompile Include="..\..\src\jyn_asympt.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\round_raw_generic.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\fits_s.h">
@@ -730,19 +733,34 @@
     <ClInclude Include="..\..\src\random_deviate.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\mpir\dll\gmp.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\mpir\dll\gmp-impl.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\mpir\dll\gmp-mparam.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\mparam.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\mpir\dll\config.h">
+    <ClInclude Include="..\..\..\mpir\dll\x64\Release\gmp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\mpir\dll\x64\Release\gmp-impl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\mpir\dll\x64\Release\gmp-mparam.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\mpir\dll\x64\Release\longlong.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\mpir\dll\x64\Release\config.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\mpfr-cvers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\mpfr-intmax.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\mpfr-mini-gmp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\mpfr-sassert.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

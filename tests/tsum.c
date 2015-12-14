@@ -22,7 +22,11 @@ http://www.gnu.org/licenses/ or write to the Free Software Foundation, Inc.,
 
 #include "mpfr-test.h"
 #include <sys/types.h>
+#ifdef _MSC_VER
+#include <getrusage.h>
+#else
 #include <sys/resource.h>
+#endif
 
 #ifndef MPFR_NCANCEL
 #define MPFR_NCANCEL 10

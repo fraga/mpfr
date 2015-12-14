@@ -742,22 +742,22 @@
     <ClInclude Include="..\..\src\mpfr-mini-gmp.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\mpir\lib\config.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\mpir\lib\gmp.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\mpir\lib\gmp-impl.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\mpir\lib\gmp-mparam.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\mpir\lib\longlong.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\mparam.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\mpir\lib\x64\Release\config.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\mpir\lib\x64\Release\gmp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\mpir\lib\x64\Release\gmp-impl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\mpir\lib\x64\Release\gmp-mparam.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\mpir\lib\x64\Release\longlong.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
