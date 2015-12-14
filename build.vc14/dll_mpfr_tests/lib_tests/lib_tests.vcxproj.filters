@@ -26,9 +26,6 @@
     <ClCompile Include="..\..\..\tests\rnd_mode.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\getrusage.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\..\mpir\dll\x64\Release\config.h">

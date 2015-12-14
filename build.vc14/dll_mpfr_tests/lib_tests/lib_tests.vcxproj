@@ -167,7 +167,6 @@
     <ClCompile Include="..\..\..\tests\tests.c">
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Default</CompileAs>
     </ClCompile>
-    <ClCompile Include="..\..\getrusage.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\..\mpir\dll\x64\Release\config.h" />
