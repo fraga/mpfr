@@ -21,24 +21,18 @@ http://www.gnu.org/licenses/ or write to the Free Software Foundation, Inc.,
 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA. */
 
 #include "mpfr-test.h"
-#include <sys/types.h>
-#ifdef _MSC_VER
-#include <getrusage.h>
-#else
-#include <sys/resource.h>
-#endif
 
 #ifndef MPFR_NCANCEL
 #define MPFR_NCANCEL 10
 #endif
 
-static int
-cputime ()
-{
-  struct rusage rus;
+#include <time.h>
 
-  getrusage (0, &rus);
-  return rus.ru_utime.tv_sec * 1000 + rus.ru_utime.tv_usec / 1000;
+/* return the cpu time in milliseconds */
+static int
+cputime (void)
+{
+  return clock () / (CLOCKS_PER_SEC / 1000);
 }
 
 static mpfr_prec_t

@@ -79,7 +79,7 @@
     <ClCompile>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>..\..\;..\..\..\src\;..\..\..\..\mpir\lib\$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;MPFR_HAVE_GMP_IMPL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;HAVE_CONFIG_H;_DEBUG;_LIB;MPFR_HAVE_GMP_IMPL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <FloatingPointModel>Strict</FloatingPointModel>
       <PrecompiledHeader>
@@ -101,7 +101,7 @@
     <ClCompile>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>..\..\;..\..\..\src\;..\..\..\..\mpir\lib\$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_WIN64;_DEBUG;_LIB;MPFR_HAVE_GMP_IMPL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;HAVE_CONFIG_H;_WIN64;_DEBUG;_LIB;MPFR_HAVE_GMP_IMPL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <FloatingPointModel>Strict</FloatingPointModel>
       <PrecompiledHeader>
@@ -117,7 +117,7 @@
     <ClCompile>
       <Optimization>Full</Optimization>
       <AdditionalIncludeDirectories>..\..\;..\..\..\src\;..\..\..\..\mpir\lib\$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;MPFR_HAVE_GMP_IMPL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;HAVE_CONFIG_H;NDEBUG;_LIB;MPFR_HAVE_GMP_IMPL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <FloatingPointModel>Strict</FloatingPointModel>
       <PrecompiledHeader>
       </PrecompiledHeader>
@@ -139,7 +139,7 @@
     <ClCompile>
       <Optimization>Full</Optimization>
       <AdditionalIncludeDirectories>..\..\;..\..\..\src\;..\..\..\..\mpir\lib\$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_WIN64;NDEBUG;_LIB;MPFR_HAVE_GMP_IMPL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;HAVE_CONFIG_H;_WIN64;NDEBUG;_LIB;MPFR_HAVE_GMP_IMPL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <FloatingPointModel>Strict</FloatingPointModel>
       <PrecompiledHeader>
       </PrecompiledHeader>
@@ -161,10 +161,20 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\mpir\lib\gmp-impl.h" />
-    <ClInclude Include="..\..\..\..\mpir\lib\gmp-mparam.h" />
-    <ClInclude Include="..\..\..\..\mpir\lib\gmp.h" />
-    <ClInclude Include="..\..\..\..\mpir\lib\longlong.h" />
+    <ClInclude Include="..\..\..\..\mpir\lib\x64\Release\gmp-impl.h" />
+    <ClInclude Include="..\..\..\..\mpir\lib\x64\Release\gmp-mparam.h" />
+    <ClInclude Include="..\..\..\..\mpir\lib\x64\Release\gmp.h" />
+    <ClInclude Include="..\..\..\..\mpir\lib\x64\Release\longlong.h" />
+    <ClInclude Include="..\..\..\src\mpfr-cvers.h" />
+    <ClInclude Include="..\..\..\src\mpfr-gmp.h" />
+    <ClInclude Include="..\..\..\src\mpfr-impl.h" />
+    <ClInclude Include="..\..\..\src\mpfr-intmax.h" />
+    <ClInclude Include="..\..\..\src\mpfr-longlong.h" />
+    <ClInclude Include="..\..\..\src\mpfr-mini-gmp.h" />
+    <ClInclude Include="..\..\..\src\mpfr-sassert.h" />
+    <ClInclude Include="..\..\..\src\mpfr-thread.h" />
+    <ClInclude Include="..\..\..\src\mpfr.h" />
+    <ClInclude Include="..\..\..\tests\mpfr-test.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
