@@ -31,9 +31,6 @@
     <ClInclude Include="..\..\..\..\mpir\dll\x64\Release\config.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\getrusage.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\..\mpir\dll\x64\Release\gmp.h">
       <Filter>Header Files</Filter>
     </ClInclude>

@@ -184,7 +184,6 @@
     <ClInclude Include="..\..\..\src\mpfr-thread.h" />
     <ClInclude Include="..\..\..\src\mpfr.h" />
     <ClInclude Include="..\..\..\tests\mpfr-test.h" />
-    <ClInclude Include="..\..\getrusage.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
