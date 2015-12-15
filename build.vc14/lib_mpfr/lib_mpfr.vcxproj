@@ -136,7 +136,6 @@
     </ClCompile>
     <Lib>
       <AdditionalDependencies>..\..\..\mpir\lib\$(IntDir)mpir.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <TargetMachine />
     </Lib>
     <PostBuildEvent>
       <Command>
@@ -157,7 +156,7 @@
       <Optimization>Full</Optimization>
       <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
       <AdditionalIncludeDirectories>..\;..\..\src\;..\..\..\mpir\lib\$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_WIN32;HAVE_CONFIG_H;_LIB;_WIN64;NDEBUG;_GMP_IEEE_FLOATS;_CRT_SECURE_NO_WARNINGS;MPFR_HAVE_GMP_IMPL</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WIN32;HAVE_CONFIG_H;_LIB;NDEBUG;_GMP_IEEE_FLOATS;_CRT_SECURE_NO_WARNINGS;MPFR_HAVE_GMP_IMPL</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <BufferSecurityCheck>false</BufferSecurityCheck>
       <FloatingPointModel>Strict</FloatingPointModel>
@@ -374,6 +373,12 @@
     <ClCompile Include="..\..\src\round_near_x.c" />
     <ClCompile Include="..\..\src\round_p.c" />
     <ClCompile Include="..\..\src\round_prec.c" />
+    <ClCompile Include="..\..\src\round_raw_generic.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="..\..\src\scale2.c" />
     <ClCompile Include="..\..\src\sec.c" />
     <ClCompile Include="..\..\src\sech.c" />

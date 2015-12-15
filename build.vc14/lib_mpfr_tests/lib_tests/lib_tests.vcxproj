@@ -161,6 +161,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\..\mpir\lib\x64\Release\config.h" />
     <ClInclude Include="..\..\..\..\mpir\lib\x64\Release\gmp-impl.h" />
     <ClInclude Include="..\..\..\..\mpir\lib\x64\Release\gmp-mparam.h" />
     <ClInclude Include="..\..\..\..\mpir\lib\x64\Release\gmp.h" />

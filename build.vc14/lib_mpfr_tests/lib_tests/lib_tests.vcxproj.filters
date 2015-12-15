@@ -70,5 +70,8 @@
     <ClInclude Include="..\..\..\src\mpfr-thread.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\..\mpir\lib\x64\Release\config.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

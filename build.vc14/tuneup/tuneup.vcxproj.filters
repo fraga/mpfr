@@ -46,9 +46,6 @@
     <ClInclude Include="..\..\src\mpfr.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\mpir\mpir.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\mpir\lib\x64\Release\config.h">
       <Filter>Header Files</Filter>
     </ClInclude>

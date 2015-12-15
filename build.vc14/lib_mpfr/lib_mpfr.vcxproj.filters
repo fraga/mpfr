@@ -695,6 +695,9 @@
     <ClCompile Include="..\..\src\jyn_asympt.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\round_raw_generic.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\fits_s.h">
@@ -727,9 +730,6 @@
     <ClInclude Include="..\..\src\mpfr-thread.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\src\mpfr-sassert.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\src\random_deviate.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -758,6 +758,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\mpir\lib\x64\Release\longlong.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\mpfr-sassert.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
