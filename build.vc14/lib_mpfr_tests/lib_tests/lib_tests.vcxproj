@@ -161,11 +161,11 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\mpir\lib\x64\Release\config.h" />
-    <ClInclude Include="..\..\..\..\mpir\lib\x64\Release\gmp-impl.h" />
-    <ClInclude Include="..\..\..\..\mpir\lib\x64\Release\gmp-mparam.h" />
-    <ClInclude Include="..\..\..\..\mpir\lib\x64\Release\gmp.h" />
-    <ClInclude Include="..\..\..\..\mpir\lib\x64\Release\longlong.h" />
+    <ClInclude Include="..\..\..\..\mpir\lib\$(IntDir)config.h" />
+    <ClInclude Include="..\..\..\..\mpir\lib\$(IntDir)gmp-impl.h" />
+    <ClInclude Include="..\..\..\..\mpir\lib\$(IntDir)gmp-mparam.h" />
+    <ClInclude Include="..\..\..\..\mpir\lib\$(IntDir)gmp.h" />
+    <ClInclude Include="..\..\..\..\mpir\lib\$(IntDir)longlong.h" />
     <ClInclude Include="..\..\..\src\mpfr-cvers.h" />
     <ClInclude Include="..\..\..\src\mpfr-gmp.h" />
     <ClInclude Include="..\..\..\src\mpfr-impl.h" />

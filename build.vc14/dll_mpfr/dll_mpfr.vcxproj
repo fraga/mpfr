@@ -158,6 +158,7 @@
       </Command>
     </CustomBuildStep>
     <ClCompile>
+      <Optimization>Full</Optimization>
       <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
       <AdditionalIncludeDirectories>..\;..\..\;..\..\..\mpir\dll\$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_WIN32;HAVE_CONFIG_H;NDEBUG;_LIB;__MPFR_WITHIN_MPFR;_GMP_IEEE_FLOATS;_CRT_SECURE_NO_WARNINGS;HAVE_STDINT_H;__GMP_LIBGMP_DLL;MPFR_USE_THREAD_SAFE;MPFR_HAVE_GMP_IMPL</PreprocessorDefinitions>
@@ -169,7 +170,6 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <CompileAs>Default</CompileAs>
-      <Optimization>Full</Optimization>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
@@ -471,11 +471,11 @@
     <ClCompile Include="..\get_patches.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\mpir\dll\x64\Release\config.h" />
-    <ClInclude Include="..\..\..\mpir\dll\x64\Release\gmp-impl.h" />
-    <ClInclude Include="..\..\..\mpir\dll\x64\Release\gmp-mparam.h" />
-    <ClInclude Include="..\..\..\mpir\dll\x64\Release\gmp.h" />
-    <ClInclude Include="..\..\..\mpir\dll\x64\Release\longlong.h" />
+    <ClInclude Include="..\..\..\mpir\dll\$(IntDir)config.h" />
+    <ClInclude Include="..\..\..\mpir\dll\$(IntDir)gmp-impl.h" />
+    <ClInclude Include="..\..\..\mpir\dll\$(IntDir)gmp-mparam.h" />
+    <ClInclude Include="..\..\..\mpir\dll\$(IntDir)gmp.h" />
+    <ClInclude Include="..\..\..\mpir\dll\$(IntDir)longlong.h" />
     <ClInclude Include="..\..\src\fits_s.h" />
     <ClInclude Include="..\..\src\fits_u.h" />
     <ClInclude Include="..\..\src\gen_inverse.h" />

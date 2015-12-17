@@ -156,7 +156,7 @@
       <Optimization>Full</Optimization>
       <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
       <AdditionalIncludeDirectories>..\;..\..\src\;..\..\..\mpir\lib\$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_WIN32;HAVE_CONFIG_H;_LIB;NDEBUG;_GMP_IEEE_FLOATS;_CRT_SECURE_NO_WARNINGS;MPFR_HAVE_GMP_IMPL</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WIN32;HAVE_CONFIG_H;NDEBUG;_LIB;_GMP_IEEE_FLOATS;_CRT_SECURE_NO_WARNINGS;MPFR_HAVE_GMP_IMPL</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <BufferSecurityCheck>false</BufferSecurityCheck>
       <FloatingPointModel>Strict</FloatingPointModel>
@@ -202,7 +202,6 @@
     </ClCompile>
     <Lib>
       <AdditionalDependencies>..\..\..\mpir\lib\$(IntDir)mpir.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <TargetMachine />
     </Lib>
     <PostBuildEvent>
       <Command>
@@ -451,11 +450,11 @@
     <ClCompile Include="..\get_patches.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\mpir\lib\x64\Release\config.h" />
-    <ClInclude Include="..\..\..\mpir\lib\x64\Release\gmp-impl.h" />
-    <ClInclude Include="..\..\..\mpir\lib\x64\Release\gmp-mparam.h" />
-    <ClInclude Include="..\..\..\mpir\lib\x64\Release\gmp.h" />
-    <ClInclude Include="..\..\..\mpir\lib\x64\Release\longlong.h" />
+    <ClInclude Include="..\..\..\mpir\lib\$(IntDir)config.h" />
+    <ClInclude Include="..\..\..\mpir\lib\$(IntDir)gmp-impl.h" />
+    <ClInclude Include="..\..\..\mpir\lib\$(IntDir)gmp-mparam.h" />
+    <ClInclude Include="..\..\..\mpir\lib\$(IntDir)gmp.h" />
+    <ClInclude Include="..\..\..\mpir\lib\$(IntDir)longlong.h" />
     <ClInclude Include="..\..\src\fits_s.h" />
     <ClInclude Include="..\..\src\fits_u.h" />
     <ClInclude Include="..\..\src\gen_inverse.h" />

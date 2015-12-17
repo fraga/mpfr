@@ -28,19 +28,19 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\mpir\dll\x64\Release\config.h">
+    <ClInclude Include="..\..\..\..\mpir\dll\$(IntDir)config.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\mpir\dll\x64\Release\gmp.h">
+    <ClInclude Include="..\..\..\..\mpir\dll\$(IntDir)gmp.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\mpir\dll\x64\Release\gmp-impl.h">
+    <ClInclude Include="..\..\..\..\mpir\dll\$(IntDir)gmp-impl.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\mpir\dll\x64\Release\gmp-mparam.h">
+    <ClInclude Include="..\..\..\..\mpir\dll\$(IntDir)gmp-mparam.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\mpir\dll\x64\Release\longlong.h">
+    <ClInclude Include="..\..\..\..\mpir\dll\$(IntDir)longlong.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\src\mpfr.h">

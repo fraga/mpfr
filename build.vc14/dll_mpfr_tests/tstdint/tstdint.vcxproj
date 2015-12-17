@@ -99,6 +99,7 @@
       </PrecompiledHeader>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <ForcedIncludeFiles>..\..\..\..\mpir\lib\$(IntDir)\config.h</ForcedIncludeFiles>
     </ClCompile>
     <Link>
       <AdditionalDependencies>..\$(IntDir)lib_tests.lib;..\..\..\dll\$(IntDir)mpfr.lib;..\..\..\..\mpir\dll\$(IntDir)mpir.lib;%(AdditionalDependencies)</AdditionalDependencies>
@@ -122,6 +123,7 @@
       </PrecompiledHeader>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <ForcedIncludeFiles>..\..\..\..\mpir\lib\$(IntDir)\config.h</ForcedIncludeFiles>
     </ClCompile>
     <Link>
       <AdditionalDependencies>..\$(IntDir)lib_tests.lib;..\..\..\dll\$(IntDir)mpfr.lib;..\..\..\..\mpir\dll\$(IntDir)mpir.lib;%(AdditionalDependencies)</AdditionalDependencies>
@@ -142,6 +144,7 @@
       </PrecompiledHeader>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <ForcedIncludeFiles>..\..\..\..\mpir\lib\$(IntDir)\config.h</ForcedIncludeFiles>
     </ClCompile>
     <Link>
       <AdditionalDependencies>..\$(IntDir)lib_tests.lib;..\..\..\dll\$(IntDir)mpfr.lib;..\..\..\..\mpir\dll\$(IntDir)mpir.lib;%(AdditionalDependencies)</AdditionalDependencies>
@@ -168,6 +171,7 @@
       </PrecompiledHeader>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <ForcedIncludeFiles>..\..\..\..\mpir\lib\$(IntDir)\config.h</ForcedIncludeFiles>
     </ClCompile>
     <Link>
       <AdditionalDependencies>..\$(IntDir)lib_tests.lib;..\..\..\dll\$(IntDir)mpfr.lib;..\..\..\..\mpir\dll\$(IntDir)mpir.lib;%(AdditionalDependencies)</AdditionalDependencies>

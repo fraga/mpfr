@@ -46,16 +46,16 @@
     <ClInclude Include="..\..\src\mpfr.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\mpir\lib\x64\Release\config.h">
+    <ClInclude Include="..\..\..\mpir\lib\$(IntDir)config.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\mpir\lib\x64\Release\gmp.h">
+    <ClInclude Include="..\..\..\mpir\lib\$(IntDir)gmp.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\mpir\lib\x64\Release\gmp-impl.h">
+    <ClInclude Include="..\..\..\mpir\lib\$(IntDir)gmp-impl.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\mpir\lib\x64\Release\gmp-mparam.h">
+    <ClInclude Include="..\..\..\mpir\lib\$(IntDir)gmp-mparam.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\mpfr-cvers.h">
@@ -67,10 +67,10 @@
     <ClInclude Include="..\..\src\mpfr-sassert.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\mpir\lib\x64\Release\mpir.h">
+    <ClInclude Include="..\..\..\mpir\lib\$(IntDir)mpir.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\mpir\lib\x64\Release\longlong.h">
+    <ClInclude Include="..\..\..\mpir\lib\$(IntDir)longlong.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
